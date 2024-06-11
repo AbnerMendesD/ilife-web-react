@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
@@ -18,6 +18,16 @@ const RegisterForm = () => {
 
     const [submitting, setSubmitting] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    const togglePasswordVisibility = (field) => {
+        if (field === "password") {
+            setShowPassword(!showPassword);
+        } else if (field === "confirmPassword") {
+            setShowConfirmPassword(!showConfirmPassword);
+        }
+    };
 
     const onSubmit = async (data) => {
         setSubmitting(true);
@@ -84,26 +94,29 @@ const RegisterForm = () => {
                 </div>
                 {errors.birthDate && <span>{errors.birthDate.message}</span>}
                 <div className="register-senha-box">
-                    <input type="password" name="password" {...register("password", { required: "Password is required", validate: validatePassword })} placeholder='Password' />
-                    <FaLock className='icon' />
+                    <input type={showPassword ? "text" : "password"} name="password" {...register("password", { required: "Password is required", validate: validatePassword })} placeholder='Password' />
+                    <FaLock className='icon' onClick={() => togglePasswordVisibility("password")} />
                 </div>
                 {errors.password && <span>{errors.password.message}</span>}
                 <div className="register-senha-box">
-                    <input type="password" name="confirmPassword" {...register("confirmPassword", { required: "Confirmation password is required", validate: validateConfirmPassword })} placeholder='Confirm Password' />
-                    <FaLock className='icon' />
+                    <input type={showConfirmPassword ? "text" : "password"} name="confirmPassword" {...register("confirmPassword", { required: "Confirmation password is required", validate: validateConfirmPassword })} placeholder='Confirm Password' />
+                    <FaLock className='icon' onClick={() => togglePasswordVisibility("confirmPassword")} />
                 </div>
                 {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
+                {errors.confirmPassword && errors.confirmPassword.type === "validate" && (
+                    <span>As senhas não coincidem</span>
+                )}
+
                 <h5 className='register-h5'>A senha deve ter no mínimo 8 caracteres</h5>
                 <h6 className='register-h6'>Letra maiúscula, símbolo e número</h6>
-                <button className='register-button'type="submit" disabled={submitting}>Cadastro</button>
+                <button className='register-button' type="submit" disabled={submitting}>Cadastro</button>
                 {errorMessage && <p>{errorMessage}</p>}
                 <div className="register-link">
-                    <p>Já tem uma conta? <Link to='/'>Login</Link></p>
+                    <p>Já tem uma conta? <Link to='/Login'>Login</Link></p>
                 </div>
             </form>
             <div className='register-background' />
         </div>
     )
 }
-
 export default RegisterForm;
