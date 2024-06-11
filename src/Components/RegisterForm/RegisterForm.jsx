@@ -93,9 +93,9 @@ const RegisterForm = () => {
                     <FaLock className='icon' />
                 </div>
                 {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
-                <h6 className='register-senha'>A senha deve ter no mínimo 8 caracteres</h6>
-                <h6 id='letra'>Letra maiúscula, símbolo e número</h6>
-                <button type="submit" disabled={submitting}>Register</button>
+                <h5 className='register-h5'>A senha deve ter no mínimo 8 caracteres</h5>
+                <h6 className='register-h6'>Letra maiúscula, símbolo e número</h6>
+                <button className='register-button'type="submit" disabled={submitting}>Cadastro</button>
                 {errorMessage && <p>{errorMessage}</p>}
                 <div className="register-link">
                     <p>Já tem uma conta? <Link to='/'>Login</Link></p>
