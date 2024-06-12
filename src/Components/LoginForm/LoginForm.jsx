@@ -69,8 +69,8 @@ const LoginForm = () => {
           <div className="login-input-box">
             <input
               type="text"
-              name="email"
-              placeholder='Email'
+              name="username"
+              placeholder='username'
               value={username}
               onChange={handleInputChange}
               required
