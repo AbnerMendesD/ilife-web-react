@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaUser, FaLock} from "react-icons/fa";
+import { FaUser, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import './RegisterForm.css';
 
@@ -20,6 +20,8 @@ const RegisterForm = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = (field) => {
         if (field === "password") {
@@ -42,6 +44,7 @@ const RegisterForm = () => {
             });
             if (response.ok) {
                 console.log('Registration successful');
+                navigate('/login'); // Redireciona para a tela de login
             } else {
                 const errorData = await response.json();
                 setErrorMessage(errorData.message);
@@ -112,7 +115,7 @@ const RegisterForm = () => {
                 <button className='register-button' type="submit" disabled={submitting}>Cadastro</button>
                 {errorMessage && <p>{errorMessage}</p>}
                 <div className="register-link">
-                    <p>Já tem uma conta? <Link to='/Login'>Login</Link></p>
+                    <p>Já tem uma conta? <Link to='/login'>Login</Link></p>
                 </div>
             </form>
             <div className='register-background' />
