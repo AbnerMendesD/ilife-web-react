@@ -10,21 +10,28 @@
 }
 
 .login-container {
-    display: flex; /* Usar flexbox para alinhar os itens */
-    flex-direction: column; /* Organizar os itens em coluna */
-    justify-content: center; /* Centralizar verticalmente os itens */
+    display: flex;
+    /* Usar flexbox para alinhar os itens */
+    flex-direction: column;
+    /* Organizar os itens em coluna */
+    justify-content: center;
+    /* Centralizar verticalmente os itens */
     height: 100vh;
     width: 30vw;
     padding: 10px;
-    overflow: hidden; /* Ocultar conteúdo que ultrapassar as bordas do contêiner */
+    overflow: hidden;
+    /* Ocultar conteúdo que ultrapassar as bordas do contêiner */
 }
 
 .form-login {
-    width: 100%; /* Fazer o formulário ocupar toda a largura do contêiner */
-    max-width: 300px; /* Definir uma largura máxima para o formulário */
+    width: 100%;
+    /* Fazer o formulário ocupar toda a largura do contêiner */
+    max-width: 300px;
+    /* Definir uma largura máxima para o formulário */
     margin: auto;
     padding: 20px;
-    background-color: #f9f9f9; /* Fundo do Forms do Login */
+    background-color: #f9f9f9;
+    /* Fundo do Forms do Login */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -37,13 +44,16 @@
 
 .login-input-box,
 .senha-input-box {
-    position: relative; /* Para que possamos posicionar os ícones relativamente a estes elementos */
-    margin-bottom: 20px; /* Adicione um espaço entre os inputs */
+    position: relative;
+    /* Para que possamos posicionar os ícones relativamente a estes elementos */
+    margin-bottom: 20px;
+    /* Adicione um espaço entre os inputs */
 }
 
 .login-input-box input,
 .senha-input-box input {
-    width: calc(100% - 10px); /* Ajuste a largura para acomodar o ícone */
+    width: calc(100% - 10px);
+    /* Ajuste a largura para acomodar o ícone */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -51,35 +61,67 @@
 
 .login-input-box input::placeholder,
 .senha-input-box input::placeholder {
-    color: #999; /* Defina a cor do texto de espaço reservado */
+    color: #999;
+    /* Defina a cor do texto de espaço reservado */
 }
 
 .login-input-box .login-icon,
 .senha-input-box .senha-icon {
-    position: absolute; /* Posicione os ícones de forma absoluta */
-    top: 50%; /* Alinhe verticalmente ao meio */
-    transform: translateY(-50%); /* Corrija a posição vertical */
-    right: 10px; /* Distância do ícone à direita */
+    position: absolute;
+    /* Posicione os ícones de forma absoluta */
+    top: 50%;
+    /* Alinhe verticalmente ao meio */
+    transform: translateY(-50%);
+    /* Corrija a posição vertical */
+    right: 10px;
+    /* Distância do ícone à direita */
 }
 
-
 .login-button {
-    width: 100%; /* Ocupa toda a largura disponível */
-    padding: 10px; /* Espaçamento interno */
-    background-color: #007bff; /* Cor de fundo */
-    color: #fff; /* Cor do texto */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Borda arredondada */
-    cursor: pointer; /* Cursor de apontar */
-    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+    padding: 10px;
+    /* Espaçamento interno */
+    background-color: #007bff;
+    /* Cor de fundo */
+    color: #fff;
+    /* Cor do texto */
+    border: none;
+    /* Sem borda */
+    border-radius: 5px;
+    /* Borda arredondada */
+    cursor: pointer;
+    /* Cursor de apontar */
+    transition: background-color 0.3s;
+    /* Efeito de transição na cor de fundo */
 }
 
 .login-button:hover {
-    background-color: #0056b3; /* Cor de fundo alterada no hover */
+    background-color: #0056b3;
+    /* Cor de fundo alterada no hover */
 }
 
 .login-paragrafo {
     font-family: sans-serif;
     margin-top: 30px;
     font-family: Poppins;
+}
+
+.login-recuperar-senha {
+    font-family: sans-serif;
+    padding: 10px;
+    max-width: 90vw;
+    /* limite a largura máxima para não ultrapassar a viewport */
+    box-sizing: border-box;
+    /* garante que padding seja incluído na largura total */
+}
+
+/* Media Queries para ajustes adicionais */
+@media (max-width: 768px) {
+    .login-recuperar-senha {
+        margin-left: 0;
+        /* remover margem para telas pequenas */
+        width: 100%;
+        /* ocupar toda a largura disponível */
+    }
 }

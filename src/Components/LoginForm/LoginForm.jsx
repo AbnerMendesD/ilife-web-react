@@ -98,6 +98,9 @@ const LoginForm = () => {
           <div className="login-register-link">
             <p className='login-paragrafo'>Don't have an account? <a href='/register'>Register</a></p>
           </div>
+          <div className='login-recuperar-senha'>
+            <p className='login-recuperar-senha-p'><a href='/recuperar-senha'>Esqueceu a senha?</a></p> 
+          </div>
         </form>
       </div>
       <div className='login-background' />
