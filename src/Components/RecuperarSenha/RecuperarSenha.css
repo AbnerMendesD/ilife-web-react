@@ -1,0 +1,55 @@
+/* src/Components/RecuperarSenha/RecuperarSenha.css */
+.recuperar-senha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.recuperar-senha-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.form-recuperar-senha {
+    display: flex;
+    flex-direction: column;
+}
+
+.recuperar-senha-h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.recuperar-senha-input-box {
+    margin-bottom: 1rem;
+}
+
+.recuperar-senha-input-box input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.recuperar-senha-button {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.recuperar-senha-button:hover {
+    background: #0056b3;
+}
+
+.recuperar-senha-error-message {
+    color: red;
+    margin-top: 0.5;
+}
